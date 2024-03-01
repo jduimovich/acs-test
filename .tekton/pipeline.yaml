@@ -12,7 +12,7 @@ spec:
     - name: ACS_SCAN_OUTPUT
       value: $(tasks.print-message.results.SCAN_OUTPUT)
   tasks:
-    - name: clone-repository
+    - name: git-clone
       params:
         - name: url
           value:  https://github.com/jduimovich/acs-test
@@ -28,7 +28,7 @@ spec:
         - name: message
           value: $(params.message)  
       runAfter:
-        - clone-repository
+        - git-clone
       taskRef:
         name: print-message
       workspaces:

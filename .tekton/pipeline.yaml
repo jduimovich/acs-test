@@ -9,10 +9,26 @@ spec:
       name: message
       type: string
   tasks:
+    - name: clone-repository
+      params:
+        - name: url
+          value:  https://github.com/jduimovich/acs-test
+        - name: revision
+          value: main
+      taskRef:
+        name: git-clone 
+      workspaces:
+        - name: output
+          workspace: workspace
     - name: print-message
       params:
         - name: message
           value: $(params.message)  
+      runAfter:
+        - git-clone
       taskRef:
         name: print-message
-     
+      workspaces:
+        - name: output
+          workspace: workspace
+

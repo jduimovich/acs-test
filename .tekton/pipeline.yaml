@@ -8,6 +8,9 @@ spec:
       description: Random Param
       name: message
       type: string
+  results: 
+    - name: ACS_SCAN_OUTPUT
+      value: $(tasks.print-message.results.SCAN_OUTPUT)
   tasks:
     - name: clone-repository
       params:

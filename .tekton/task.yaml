@@ -14,6 +14,11 @@ spec:
     - name: message
       type: string
       default: "no message"
+  results:
+    - name: SCAN_OUTPUT
+      description: Summary of the roxctl scan
+    - name: TEST_OUTPUT
+      description: Result of the `roxctl image check` check
   steps:
   - name: message
     image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
@@ -23,8 +28,8 @@ spec:
   - name: scan-output
     image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
     script: |
-      #!/usr/bin/env bash 
-      cat scan-output
+      #!/usr/bin/env bash  
+      echo "{\"vulnerabilities\":{\"critical\":1,\"high\":2,\"medium\":3,\"low\":3}}" | tee $(results.SCAN_OUTPUT.path)
   - name: print-message
     image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
     script: |

@@ -1,0 +1,40 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: acs-deploy-check
+  annotations:
+    task.results.format: application/json
+    task.results.type: roxctl-image-scan
+    task.results.key: SCAN_OUTPUT
+    task.output.location: logs
+    task.results.container: step-acs-deploy-check
+spec: 
+  params:
+    - name: message
+      type: string
+      default: "no message"
+  results:
+    - name: SCAN_OUTPUT
+      description: Summary of the roxctl scan
+    - name: TEST_OUTPUT
+      description: Result of the `roxctl image check` check
+  steps:
+  - name: message
+    image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
+    script: |
+      #!/usr/bin/env bash  
+      echo "acs-deploy-check $(params.message)"
+  - name: scan-output
+    image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
+    script: |
+      #!/usr/bin/env bash    
+      cat ./workspace/output/source/scan-output | tee $(results.SCAN_OUTPUT.path)
+  - name: report
+    image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
+    script: |
+      #!/usr/bin/env bash 
+      cat ./workspace/output/source/acs-deploy-check
+  workspaces:
+  - description: The git repo will be cloned onto the volume backing this Workspace.
+    name: output
+   

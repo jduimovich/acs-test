@@ -1,0 +1,15 @@
+ 
+STEP=report
+NS=acs-test
+
+for REPORT_TASK in acs-image-scan acs-image-check acs-deploy-check; do 
+    NAMES=$(kubectl get taskruns -n $NS -o name | grep $REPORT_TASK)
+    for tr in $NAMES ; do 
+        echo $tr 
+        kubectl annotate -n $NS $tr task.results.format=application/json
+        kubectl annotate -n $NS $tr task.results.type=roxctl-image-check
+        kubectl annotate -n $NS $tr task.results.key=SCAN_OUTPUT
+        kubectl annotate -n $NS $tr task.output.location=logs
+        kubectl annotate -n $NS $tr task.results.container=step-$STEP
+    done   
+done

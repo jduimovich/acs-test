@@ -6,8 +6,10 @@ metadata:
     pipelinesascode.tekton.dev/on-event: "[push]"
     pipelinesascode.tekton.dev/on-target-branch: "[main]" 
     pipelinesascode.tekton.dev/pipeline: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/pipeline.yaml"
-    pipelinesascode.tekton.dev/task-0: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/task.yaml"
-    pipelinesascode.tekton.dev/task-1: "https://raw.githubusercontent.com/redhat-appstudio/tssc-sample-pipelines/main/pac/tasks/git-clone.yaml"
+    pipelinesascode.tekton.dev/task-0: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/acs-deploy-check.yaml"
+    pipelinesascode.tekton.dev/task-1: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/acs-image-check.yaml"
+    pipelinesascode.tekton.dev/task-2: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/acs-image-scan.yaml"
+    pipelinesascode.tekton.dev/task-3: "https://raw.githubusercontent.com/redhat-appstudio/tssc-sample-pipelines/main/pac/tasks/git-clone.yaml"
   labels:
     argocd/app-name: acs-test
     janus-idp.io/tekton: acs-test

@@ -10,7 +10,7 @@ spec:
       type: string
   results: 
     - name: ACS_SCAN_OUTPUT
-      value: $(tasks.print-message.results.SCAN_OUTPUT)
+      value: $(tasks.acs-image-scan.results.SCAN_OUTPUT)
   tasks:
     - name: git-clone
       params:
@@ -23,14 +23,36 @@ spec:
       workspaces:
         - name: output
           workspace: workspace
-    - name: print-message
+    - name: acs-image-scan
       params:
         - name: message
           value: $(params.message)  
       runAfter:
         - git-clone
       taskRef:
-        name: print-message
+        name: acs-image-scan
+      workspaces:
+        - name: output
+          workspace: workspace
+    - name: acs-image-check
+      params:
+        - name: message
+          value: $(params.message)  
+      runAfter:
+        - git-clone
+      taskRef:
+        name: acs-image-check
+      workspaces:
+        - name: output
+          workspace: workspace
+    - name: acs-deploy-check
+      params:
+        - name: message
+          value: $(params.message)  
+      runAfter:
+        - git-clone
+      taskRef:
+        name: acs-deploy-check
       workspaces:
         - name: output
           workspace: workspace

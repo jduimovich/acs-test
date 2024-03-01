@@ -1,0 +1,129 @@
+{
+  "results": [
+    {
+      "metadata": {
+        "id": "quay-r5qpl.apps.cluster-r5qpl.sandbox1116.opentlc.com/quayadmin/my-quarkus-app@sha256:0bf2a8066f43dbaf6845bfc35cad6e8af9f9f72a76fb61c21160b3e752cbe55e",
+        "additionalInfo": {
+          "name": "quay-r5qpl.apps.cluster-r5qpl.sandbox1116.opentlc.com/quayadmin/my-quarkus-app@sha256:0bf2a8066f43dbaf6845bfc35cad6e8af9f9f72a76fb61c21160b3e752cbe55e",
+          "type": "image"
+        }
+      },
+      "summary": {
+        "CRITICAL": 0,
+        "HIGH": 1,
+        "LOW": 1,
+        "MEDIUM": 0,
+        "TOTAL": 2
+      },
+      "violatedPolicies": [
+        {
+          "name": "Fixable Severity at least Important",
+          "severity": "HIGH",
+          "description": "Alert on deployments with fixable vulnerabilities with a Severity Rating at least Important",
+          "violation": [
+            "Fixable CVE-2022-4116 (CVSS 9.8) (severity Critical) found in component 'quarkus' (version 2.11.3.final), resolved by version 2.13.5",
+            "Fixable CVE-2022-4147 (CVSS 7.5) (severity Important) found in component 'quarkus' (version 2.11.3.final), resolved by version 2.13.5",
+            "Fixable CVE-2022-41881 (CVSS 7.5) (severity Important) found in component 'netty' (version 4.1.78.final), resolved by version 4.1.86",
+            "Fixable CVE-2022-42003 (CVSS 7.5) (severity Important) found in component 'jackson-databind' (version 2.13.3), resolved by version 2.13.4.1",
+            "Fixable CVE-2022-42003 (CVSS 7.5) (severity Important) found in component 'quarkus' (version 2.11.3.final), resolved by version 2.13.3",
+            "Fixable CVE-2022-42004 (CVSS 7.5) (severity Important) found in component 'jackson-databind' (version 2.13.3), resolved by version 2.13.4",
+            "Fixable CVE-2022-42004 (CVSS 7.5) (severity Important) found in component 'quarkus' (version 2.11.3.final), resolved by version 2.13.0",
+            "Fixable CVE-2023-1584 (CVSS 7.5) (severity Important) found in component 'quarkus' (version 2.11.3.final), resolved by version 2.13.8",
+            "Fixable CVE-2023-4853 (CVSS 8.1) (severity Important) found in component 'quarkus' (version 2.11.3.final), resolved by version 2.16.11",
+            "Fixable CVE-2023-6267 (CVSS 9.8) (severity Critical) found in component 'quarkus' (version 2.11.3.final), resolved by version 2.13.9",
+            "Fixable CVE-2023-6394 (CVSS 9.1) (severity Critical) found in component 'quarkus' (version 2.11.3.final), resolved by version 3.6.0",
+            "Fixable RHEA-2023:3850 (CVSS 8.8) (severity Important) found in component 'krb5-libs' (version 1.18.2-14.el8.x86_64), resolved by version 0:1.18.2-25.el8_8",
+            "Fixable RHSA-2022:1442 (CVSS 7.5) (severity Important) found in component 'java-11-openjdk' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.15.0.9-2.el8_5",
+            "Fixable RHSA-2022:1442 (CVSS 7.5) (severity Important) found in component 'java-11-openjdk-devel' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.15.0.9-2.el8_5",
+            "Fixable RHSA-2022:1442 (CVSS 7.5) (severity Important) found in component 'java-11-openjdk-headless' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.15.0.9-2.el8_5",
+            "Fixable RHSA-2022:1642 (CVSS 8.2) (severity Important) found in component 'zlib' (version 1.2.11-17.el8.x86_64), resolved by version 0:1.2.11-18.el8_5",
+            "Fixable RHSA-2022:2201 (CVSS 8.2) (severity Important) found in component 'rsync' (version 3.1.3-12.el8.x86_64), resolved by version 0:3.1.3-14.el8_6.2",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'aopalliance' (version 1.0-20.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.0-20.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'apache-commons-cli' (version 1.4-7.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.4-7.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'apache-commons-codec' (version 1.13-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.13-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'apache-commons-io' (version 1:2.6-6.module+el8.3.0+6804+157bd82e.noarch), resolved by version 1:2.6-6.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'apache-commons-lang3' (version 3.9-4.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:3.9-4.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'atinject' (version 1-31.20100611svn86.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1-31.20100611svn86.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'cdi-api' (version 2.0.1-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:2.0.1-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'geronimo-annotation' (version 1.0-26.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.0-26.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'google-guice' (version 4.2.2-4.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:4.2.2-4.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'guava' (version 28.1-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:28.1-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'httpcomponents-client' (version 4.5.10-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:4.5.10-4.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'httpcomponents-core' (version 4.4.12-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:4.4.12-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'jansi' (version 1.18-4.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.18-4.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'jcl-over-slf4j' (version 1.7.28-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.7.28-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'jsoup' (version 1.12.1-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.12.1-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'jsr-305' (version 0-0.25.20130910svn.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:0-0.25.20130910svn.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'maven' (version 1:3.6.2-6.module+el8.4.0+9250+1786af37.noarch), resolved by version 1:3.6.2-7.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'maven-lib' (version 1:3.6.2-6.module+el8.4.0+9250+1786af37.noarch), resolved by version 1:3.6.2-7.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'maven-openjdk11' (version 1:3.6.2-6.module+el8.4.0+9250+1786af37.noarch), resolved by version 1:3.6.2-7.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'maven-resolver' (version 1.4.1-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.4.1-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'maven-shared-utils' (version 3.2.1-0.4.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:3.2.1-0.5.module+el8.6.0+15049+43453910",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'maven-wagon' (version 3.3.4-2.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:3.3.4-2.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'plexus-cipher' (version 1.7-17.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.7-17.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'plexus-classworlds' (version 2.6.0-4.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:2.6.0-4.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'plexus-containers-component-annotations' (version 2.1.0-2.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:2.1.0-2.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'plexus-interpolation' (version 1.26-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.26-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'plexus-sec-dispatcher' (version 1.4-29.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.4-29.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'plexus-utils' (version 3.3.0-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:3.3.0-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'sisu' (version 0.3.4-2.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:0.3.4-2.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4797 (CVSS 9.8) (severity Important) found in component 'slf4j' (version 1.7.28-3.module+el8.3.0+6804+157bd82e.noarch), resolved by version 0:1.7.28-3.module+el8.6.0+13337+afcb49ec",
+            "Fixable RHSA-2022:4991 (CVSS 8.8) (severity Important) found in component 'xz-libs' (version 5.2.4-3.el8.x86_64), resolved by version 0:5.2.4-4.el8_6",
+            "Fixable RHSA-2022:5056 (CVSS 6.7) (severity Important) found in component 'cups-libs' (version 1:2.2.6-40.el8.x86_64), resolved by version 1:2.2.6-45.el8_6.2",
+            "Fixable RHSA-2022:5683 (CVSS 7.5) (severity Important) found in component 'java-11-openjdk' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.16.0.8-1.el8_6",
+            "Fixable RHSA-2022:5683 (CVSS 7.5) (severity Important) found in component 'java-11-openjdk-devel' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.16.0.8-1.el8_6",
+            "Fixable RHSA-2022:5683 (CVSS 7.5) (severity Important) found in component 'java-11-openjdk-headless' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.16.0.8-1.el8_6",
+            "Fixable RHSA-2022:6180 (CVSS 7.4) (severity Important) found in component 'rsync' (version 3.1.3-12.el8.x86_64), resolved by version 0:3.1.3-14.el8_6.3",
+            "Fixable RHSA-2022:6206 (CVSS 9.8) (severity Important) found in component 'systemd-libs' (version 239-51.el8_5.5.x86_64), resolved by version 0:239-58.el8_6.4",
+            "Fixable RHSA-2022:6878 (CVSS 8.1) (severity Important) found in component 'expat' (version 2.2.5-4.el8_5.3.x86_64), resolved by version 0:2.2.5-8.el8_6.3",
+            "Fixable RHSA-2022:7089 (CVSS 8.6) (severity Important) found in component 'libksba' (version 1.3.5-7.el8.x86_64), resolved by version 0:1.3.5-8.el8_6",
+            "Fixable RHSA-2022:8638 (CVSS 8.8) (severity Important) found in component 'krb5-libs' (version 1.18.2-14.el8.x86_64), resolved by version 0:1.18.2-22.el8_7",
+            "Fixable RHSA-2022:9058 (CVSS 9.8) (severity Important) found in component 'prometheus-jmx-exporter' (version 0.12.0-6.el8.noarch), resolved by version 0:0.12.0-9.el8_7",
+            "Fixable RHSA-2023:0625 (CVSS 8.6) (severity Important) found in component 'libksba' (version 1.3.5-7.el8.x86_64), resolved by version 0:1.3.5-9.el8_7",
+            "Fixable RHSA-2023:1252 (CVSS 8.8) (severity Important) found in component 'nss' (version 3.67.0-7.el8_5.x86_64), resolved by version 0:3.79.0-11.el8_7",
+            "Fixable RHSA-2023:1252 (CVSS 8.8) (severity Important) found in component 'nss-softokn' (version 3.67.0-7.el8_5.x86_64), resolved by version 0:3.79.0-11.el8_7",
+            "Fixable RHSA-2023:1252 (CVSS 8.8) (severity Important) found in component 'nss-softokn-freebl' (version 3.67.0-7.el8_5.x86_64), resolved by version 0:3.79.0-11.el8_7",
+            "Fixable RHSA-2023:1252 (CVSS 8.8) (severity Important) found in component 'nss-sysinit' (version 3.67.0-7.el8_5.x86_64), resolved by version 0:3.79.0-11.el8_7",
+            "Fixable RHSA-2023:1252 (CVSS 8.8) (severity Important) found in component 'nss-util' (version 3.67.0-7.el8_5.x86_64), resolved by version 0:3.79.0-11.el8_7",
+            "Fixable RHSA-2023:1405 (CVSS 7.5) (severity Important) found in component 'openssl-libs' (version 1:1.1.1k-6.el8_5.x86_64), resolved by version 1:1.1.1k-9.el8_7",
+            "Fixable RHSA-2023:1895 (CVSS 7.4) (severity Important) found in component 'java-11-openjdk' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.19.0.7-1.el8_7",
+            "Fixable RHSA-2023:1895 (CVSS 7.4) (severity Important) found in component 'java-11-openjdk-devel' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.19.0.7-1.el8_7",
+            "Fixable RHSA-2023:1895 (CVSS 7.4) (severity Important) found in component 'java-11-openjdk-headless' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.19.0.7-1.el8_7",
+            "Fixable RHSA-2023:3591 (CVSS 7.5) (severity Important) found in component 'platform-python' (version 3.6.8-41.el8.x86_64), resolved by version 0:3.6.8-51.el8_8.1",
+            "Fixable RHSA-2023:3591 (CVSS 7.5) (severity Important) found in component 'python3-libs' (version 3.6.8-41.el8.x86_64), resolved by version 0:3.6.8-51.el8_8.1",
+            "Fixable RHSA-2023:4864 (CVSS 6.5) (severity Important) found in component 'cups-libs' (version 1:2.2.6-40.el8.x86_64), resolved by version 1:2.2.6-51.el8_8.1",
+            "Fixable RHSA-2023:5455 (CVSS 7.8) (severity Important) found in component 'glibc' (version 2.28-164.el8_5.3.x86_64), resolved by version 0:2.28-225.el8_8.6",
+            "Fixable RHSA-2023:5455 (CVSS 7.8) (severity Important) found in component 'glibc-common' (version 2.28-164.el8_5.3.x86_64), resolved by version 0:2.28-225.el8_8.6",
+            "Fixable RHSA-2023:5455 (CVSS 7.8) (severity Important) found in component 'glibc-minimal-langpack' (version 2.28-164.el8_5.3.x86_64), resolved by version 0:2.28-225.el8_8.6",
+            "Fixable RHSA-2023:5837 (CVSS 7.5) (severity Important) found in component 'libnghttp2' (version 1.33.0-3.el8_2.1.x86_64), resolved by version 0:1.33.0-5.el8_8",
+            "Fixable RHSA-2023:5997 (CVSS 8.6) (severity Important) found in component 'platform-python' (version 3.6.8-41.el8.x86_64), resolved by version 0:3.6.8-51.el8_8.2",
+            "Fixable RHSA-2023:5997 (CVSS 8.6) (severity Important) found in component 'python3-libs' (version 3.6.8-41.el8.x86_64), resolved by version 0:3.6.8-51.el8_8.2",
+            "Fixable RHSA-2024:0266 (CVSS 7.4) (severity Important) found in component 'java-11-openjdk' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.22.0.7-2.el8",
+            "Fixable RHSA-2024:0266 (CVSS 7.4) (severity Important) found in component 'java-11-openjdk-devel' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.22.0.7-2.el8",
+            "Fixable RHSA-2024:0266 (CVSS 7.4) (severity Important) found in component 'java-11-openjdk-headless' (version 1:11.0.14.1.1-2.el8_5.x86_64), resolved by version 1:11.0.22.0.7-2.el8"
+          ],
+          "remediation": "Use your package manager to update to a fixed version in future builds or speak with your security team to mitigate the vulnerabilities.",
+          "failingCheck": false
+        },
+        {
+          "name": "Red Hat Package Manager in Image",
+          "severity": "LOW",
+          "description": "Alert on deployments with components of the Red Hat/Fedora/CentOS package management system.",
+          "violation": [
+            "Image includes component 'microdnf' (version 3.8.0-2.el8.x86_64)",
+            "Image includes component 'rpm' (version 4.14.3-19.el8_5.2.x86_64)"
+          ],
+          "remediation": "Run `rpm -e --nodeps $(rpm -qa '*rpm*' '*dnf*' '*libsolv*' '*hawkey*' 'yum*')` in the image build for production containers.",
+          "failingCheck": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 1,
+    "LOW": 1,
+    "MEDIUM": 0,
+    "TOTAL": 2
+  }
+}

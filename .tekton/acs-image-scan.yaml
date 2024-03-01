@@ -29,7 +29,7 @@ spec:
       kubectl annotate taskrun $(context.taskRun.name) task.results.type=roxctl-image-check
       kubectl annotate taskrun $(context.taskRun.name) task.results.key=SCAN_OUTPUT
       kubectl annotate taskrun $(context.taskRun.name) task.output.location=logs
-      kubectl annotate taskrun $(context.taskRun.name) task.results.container=step-$STEP
+      kubectl annotate taskrun $(context.taskRun.name) task.results.container=step-report
   - name: scan-output
     image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
     script: |

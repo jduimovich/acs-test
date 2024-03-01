@@ -7,8 +7,7 @@ metadata:
     task.results.type: roxctl-image-scan
     task.results.key: SCAN_OUTPUT
     task.output.location: logs
-    task.results.container: step-rox-image-scan
-    random.annotation: THIS_SHOULD_BE_HERE
+    task.results.container: step-rox-image-scan 
 spec: 
   params:
     - name: message
@@ -24,6 +23,7 @@ spec:
     image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
     script: |
       #!/usr/bin/env bash  
+      du -a
       echo "Hello $(params.message)"
   - name: scan-output
     image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7

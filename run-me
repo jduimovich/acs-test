@@ -1,6 +1,6 @@
  
  
-NS=test-pac 
+NS=acs-test
  
 kubectl get ns $NS &> /dev/null
 ERR=$?

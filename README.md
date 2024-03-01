@@ -23,6 +23,10 @@ Trigger a pipeline  via a change `bash push-change.sh ` and the pipeline will ru
 #notes 
 
 1. the tasks annotate themselves using `oc annotate` see the task definitions in .tekton (this works around the PaC bug)
+
+Each task outputs a different type roxctl-deployment-check, roxctl-deployment-check roxctl-image-check roxctl-image-scan 
+
+ie for the image check.
 ```
       oc annotate taskrun $(context.taskRun.name) task.results.format=application/json
       oc annotate taskrun $(context.taskRun.name) task.results.type=roxctl-image-check

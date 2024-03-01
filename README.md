@@ -19,3 +19,19 @@ Import the catalog-info.yaml file into backstage. It will create a component.
 
 Trigger a pipeline  via a change `bash push-change.sh ` and the pipeline will run  
  
+
+#notes 
+
+1. the tasks annotate themselves using `oc annotate` see the task definitions in .tekton (this works around the PaC bug)
+```
+      oc annotate taskrun $(context.taskRun.name) task.results.format=application/json
+      oc annotate taskrun $(context.taskRun.name) task.results.type=roxctl-image-check
+      oc annotate taskrun $(context.taskRun.name) task.results.key=SCAN_OUTPUT
+      oc annotate taskrun $(context.taskRun.name) task.output.location=logs
+      oc annotate taskrun $(context.taskRun.name) task.results.container=step-report
+ ```
+2. all three tasks need to have results to get the result
+- put them each in a step called "report" to match the annotations 
+
+
+

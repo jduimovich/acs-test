@@ -19,11 +19,10 @@ spec:
     - name: TEST_OUTPUT
       description: Result of the `roxctl image check` check
   steps:
-  - name: message
+  - name: annotate-task
     image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
     script: |
-      #!/usr/bin/env bash  
-      echo "acs-image-check $(params.message)"
+      #!/usr/bin/env bash   
       echo "acs-image-check $(context.taskRun.name)" 
       oc annotate taskrun $(context.taskRun.name) task.results.format=application/json
       oc annotate taskrun $(context.taskRun.name) task.results.type=roxctl-image-check

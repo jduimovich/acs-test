@@ -35,4 +35,7 @@ spec:
     script: |
       #!/usr/bin/env bash 
       cat full-output
-     
+  workspaces:
+  - description: The git repo will be cloned onto the volume backing this Workspace.
+    name: output
+   

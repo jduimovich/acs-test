@@ -28,7 +28,7 @@ spec:
         - name: message
           value: $(params.message)  
       runAfter:
-        - git-clone
+        - clone-repository
       taskRef:
         name: print-message
       workspaces:

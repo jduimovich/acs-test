@@ -1,0 +1,22 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: acs-test 
+  description: acs-test-acs-scanner
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:
+    # ArgoCD apps from this template used rhtap-gitops as the grouping
+    argocd/app-selector: rhtap/gitops=acs-test  
+    janus-idp.io/tekton: acs-test 
+    backstage.io/kubernetes-id: acs-test 
+    backstage.io/techdocs-ref: dir:. 
+  tags: ["testacs"] 
+spec:
+  type: service
+  owner: user:guest 
+  lifecycle: experimental
+ 

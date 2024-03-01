@@ -20,17 +20,17 @@ spec:
       description: Result of the `roxctl image check` check
   steps:
   - name: message
-    image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
+    image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
     script: |
       #!/usr/bin/env bash  
       echo "acs-image-check $(params.message)"
   - name: scan-output
-    image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
+    image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
     script: |
       #!/usr/bin/env bash    
       cat ./workspace/output/source/scan-output | tee $(results.SCAN_OUTPUT.path)
   - name: report
-    image: registry.access.redhat.com/ubi8-minimal@sha256:d8b81a38b5ad9694742ea03159d3217cd2dde3997b1ee53bbb53c33dd67be7b7
+    image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
     script: |
       #!/usr/bin/env bash 
       cat ./workspace/output/source/acs-image-check

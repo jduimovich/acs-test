@@ -1,13 +1,7 @@
 apiVersion: tekton.dev/v1
 kind: Task
 metadata:
-  name: acs-deploy-check
-  annotations:
-    task.results.format: application/json
-    task.results.type: roxctl-image-scan
-    task.results.key: SCAN_OUTPUT
-    task.output.location: logs
-    task.results.container: step-acs-deploy-check
+  name: acs-deploy-check 
 spec: 
   params:
     - name: message

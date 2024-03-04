@@ -1,23 +1,12 @@
 apiVersion: tekton.dev/v1
 kind: Task
 metadata:
-  name: acs-image-check
-  annotations:
-    task.results.format: application/json
-    task.results.type: roxctl-image-scan
-    task.results.key: SCAN_OUTPUT
-    task.output.location: logs
-    task.results.container: step-acs-image-check
+  name: acs-image-check 
 spec: 
   params:
     - name: message
       type: string
-      default: "no message"
-  results:
-    - name: SCAN_OUTPUT
-      description: Summary of the roxctl scan
-    - name: TEST_OUTPUT
-      description: Result of the `roxctl image check` check
+      default: "no message" 
   steps:
   - name: annotate-task
     image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
@@ -29,13 +18,6 @@ spec:
       oc annotate taskrun $(context.taskRun.name) task.results.key=SCAN_OUTPUT
       oc annotate taskrun $(context.taskRun.name) task.output.location=logs
       oc annotate taskrun $(context.taskRun.name) task.results.container=step-report
-
-
-  - name: scan-output
-    image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
-    script: |
-      #!/usr/bin/env bash    
-      cat ./workspace/output/source/scan-output | tee $(results.SCAN_OUTPUT.path)
   - name: report
     image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
     script: |

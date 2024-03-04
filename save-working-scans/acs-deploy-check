@@ -1,0 +1,43 @@
+{
+  "results": [
+    {
+      "metadata": {
+        "id": "",
+        "additionalInfo": {
+          "name": "quarkus-template",
+          "namespace": "default",
+          "type": "Deployment"
+        }
+      },
+      "summary": {
+        "CRITICAL": 0,
+        "HIGH": 0,
+        "LOW": 0,
+        "MEDIUM": 1,
+        "TOTAL": 1
+      },
+      "violatedPolicies": [
+        {
+          "name": "No resource requests or limits specified",
+          "severity": "MEDIUM",
+          "description": "Alert on deployments that have containers without resource requests and limits",
+          "violation": [
+            "CPU limit set to 0 cores for container 'quarkus-template'",
+            "CPU request set to 0 cores for container 'quarkus-template'",
+            "Memory limit set to 0 MB for container 'quarkus-template'",
+            "Memory request set to 0 MB for container 'quarkus-template'"
+          ],
+          "remediation": "Specify the requests and limits of CPU and Memory for your deployment.",
+          "failingCheck": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 0,
+    "LOW": 0,
+    "MEDIUM": 1,
+    "TOTAL": 1
+  }
+}

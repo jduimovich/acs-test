@@ -1,0 +1,87 @@
+{
+  "results": [
+    {
+      "metadata": {
+        "id": "",
+        "additionalInfo": {
+          "name": "hack2",
+          "namespace": "default",
+          "type": "Deployment"
+        }
+      },
+      "summary": {
+        "CRITICAL": 0,
+        "HIGH": 1,
+        "LOW": 3,
+        "MEDIUM": 1,
+        "TOTAL": 5
+      },
+      "violatedPolicies": [
+        {
+          "name": "Fixable Severity at least Important",
+          "severity": "HIGH",
+          "description": "Alert on deployments with fixable vulnerabilities with a Severity Rating at least Important",
+          "violation": [
+            "Fixable CVE-2023-49465 (CVSS 8.8) (severity Important) found in component 'libde265' (version 1.0.11-1+deb12u1) in container 'container-image', resolved by version 1.0.11-1+deb12u2",
+            "Fixable CVE-2023-49467 (CVSS 8.8) (severity Important) found in component 'libde265' (version 1.0.11-1+deb12u1) in container 'container-image', resolved by version 1.0.11-1+deb12u2",
+            "Fixable CVE-2023-49468 (CVSS 8.8) (severity Important) found in component 'libde265' (version 1.0.11-1+deb12u1) in container 'container-image', resolved by version 1.0.11-1+deb12u2",
+            "Fixable CVE-2024-0553 (CVSS 7.5) (severity Important) found in component 'gnutls28' (version 3.7.9-2+deb12u1) in container 'container-image', resolved by version 3.7.9-2+deb12u2",
+            "Fixable CVE-2024-0985 (CVSS 8) (severity Important) found in component 'postgresql-15' (version 15.5-0+deb12u1) in container 'container-image', resolved by version 15.6-0+deb12u1"
+          ],
+          "remediation": "Use your package manager to update to a fixed version in future builds or speak with your security team to mitigate the vulnerabilities.",
+          "failingCheck": false
+        },
+        {
+          "name": "Pod Service Account Token Automatically Mounted",
+          "severity": "MEDIUM",
+          "description": "Protect pod default service account tokens from compromise by minimizing the mounting of the default service account token to only those pods whose application requires interaction with the Kubernetes API.",
+          "violation": [
+            "Deployment mounts the service account tokens.",
+            "Namespace has name 'default'",
+            "Service Account is set to 'default'"
+          ],
+          "remediation": "Add `automountServiceAccountToken: false` or a value distinct from 'default' for the `serviceAccountName` key to the deployment's Pod configuration.",
+          "failingCheck": false
+        },
+        {
+          "name": "Docker CIS 4.1: Ensure That a User for the Container Has Been Created",
+          "severity": "LOW",
+          "description": "Containers should run as a non-root user",
+          "violation": [
+            "Container 'container-image' has image with user 'root'"
+          ],
+          "remediation": "Ensure that the Dockerfile for each container switches from the root user",
+          "failingCheck": false
+        },
+        {
+          "name": "Latest tag",
+          "severity": "LOW",
+          "description": "Alert on deployments with images using tag 'latest'",
+          "violation": [
+            "Container 'container-image' has image with tag 'latest'"
+          ],
+          "remediation": "Consider moving to semantic versioning based on code releases (semver.org) or using the first 12 characters of the source control SHA. This will allow you to tie the Docker image to the code.",
+          "failingCheck": false
+        },
+        {
+          "name": "Ubuntu Package Manager in Image",
+          "severity": "LOW",
+          "description": "Alert on deployments with components of the Debian/Ubuntu package management system in the image.",
+          "violation": [
+            "Container 'container-image' includes component 'apt' (version 2.6.1)",
+            "Container 'container-image' includes component 'dpkg' (version 1.21.22)"
+          ],
+          "remediation": "Run `dpkg -r --force-all apt apt-get && dpkg -r --force-all debconf dpkg` in the image build for production containers.",
+          "failingCheck": false
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "CRITICAL": 0,
+    "HIGH": 1,
+    "LOW": 3,
+    "MEDIUM": 1,
+    "TOTAL": 5
+  }
+}

@@ -1,0 +1,30 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  name: pac-pipeline-annotation 
+  annotations:
+    pipelinesascode.tekton.dev/on-event: "[push]"
+    pipelinesascode.tekton.dev/on-target-branch: "[hacks]" 
+    pipelinesascode.tekton.dev/pipeline: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/promote.yaml" 
+    pipelinesascode.tekton.dev/task-0: "https://raw.githubusercontent.com/redhat-appstudio/tssc-sample-pipelines/main/pac/tasks/git-clone.yaml"
+  labels:
+    argocd/app-name: acs-test
+    janus-idp.io/tekton: acs-test
+    backstage.io/kubernetes-id: acs-test
+    backstage.io/kubernetes-namespace: acs-test
+    app.kubernetes.io/part-of: acs-test
+spec: 
+  params:
+  - name: message
+    value: "Promote Pipeline"
+  pipelineRef:
+    name: pac-pipeline-promote
+  workspaces: 
+    - name: workspace
+      volumeClaimTemplate:
+        spec:
+          accessModes:
+            - ReadWriteOnce
+          resources:
+            requests:
+              storage: 1Gi

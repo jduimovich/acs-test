@@ -1,13 +1,16 @@
 apiVersion: tekton.dev/v1
 kind: Pipeline
 metadata: 
-  name: pac-pipeline
+  name: pac-pipeline-promote
 spec: 
   params: 
     - default: "default message"
       description: Random Param
       name: message
-      type: string 
+      type: string
+  results: 
+    - name: ACS_SCAN_OUTPUT
+      value: $(tasks.acs-image-scan.results.SCAN_OUTPUT)
   tasks:
     - name: git-clone
       params:
@@ -20,37 +23,15 @@ spec:
       workspaces:
         - name: output
           workspace: workspace
-    - name: acs-image-scan
+    - name: promote
       params:
         - name: message
           value: $(params.message)  
       runAfter:
         - git-clone
       taskRef:
-        name: acs-image-scan
+        name: promote
       workspaces:
         - name: output
           workspace: workspace
-    - name: acs-image-check
-      params:
-        - name: message
-          value: $(params.message)  
-      runAfter:
-        - git-clone
-      taskRef:
-        name: acs-image-check
-      workspaces:
-        - name: output
-          workspace: workspace
-    - name: acs-deploy-check
-      params:
-        - name: message
-          value: $(params.message)  
-      runAfter:
-        - git-clone
-      taskRef:
-        name: acs-deploy-check
-      workspaces:
-        - name: output
-          workspace: workspace
-
+     

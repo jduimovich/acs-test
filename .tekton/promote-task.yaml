@@ -12,12 +12,12 @@ spec:
     image: registry.redhat.io/openshift4/ose-cli:4.13@sha256:73df37794ffff7de1101016c23dc623e4990810390ebdabcbbfa065214352c7c
     script: |
       #!/usr/bin/env bash 
-      curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o ./jq && chmod +x ./jq  
       echo "promote task"
       ls -al 
       echo $(params.message) > body 
       cat body 
-      cat body | ./jq
+      echo 
+      cat body | tr ' ' "\n" 
   workspaces:
   - description: The git repo will be cloned onto the volume backing this Workspace.
     name: output

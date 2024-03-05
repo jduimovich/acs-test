@@ -7,10 +7,7 @@ spec:
     - default: "default message"
       description: Random Param
       name: message
-      type: string
-  results: 
-    - name: ACS_SCAN_OUTPUT
-      value: $(tasks.acs-image-scan.results.SCAN_OUTPUT)
+      type: string 
   tasks:
     - name: git-clone
       params:

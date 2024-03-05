@@ -4,7 +4,7 @@ metadata:
   name: pac-pipeline-annotation 
   annotations:
     pipelinesascode.tekton.dev/on-event: "[push]"
-    pipelinesascode.tekton.dev/on-target-branch: "[hacks]" 
+    pipelinesascode.tekton.dev/on-target-branch: "[main]" 
     pipelinesascode.tekton.dev/pipeline: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/pipeline.yaml"
     pipelinesascode.tekton.dev/task-0: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/acs-deploy-check.yaml"
     pipelinesascode.tekton.dev/task-1: "https://raw.githubusercontent.com/jduimovich/acs-test/main/.tekton/acs-image-check.yaml"

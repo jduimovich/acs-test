@@ -16,7 +16,7 @@ metadata:
 spec: 
   params:
   - name: message
-    value: "Promote Pipeline"
+    value: {{body}}
   pipelineRef:
     name: pac-pipeline-promote
   workspaces: 

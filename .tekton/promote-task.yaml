@@ -15,7 +15,9 @@ spec:
       curl -L https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 -o ./jq && chmod +x ./jq  
       echo "promote task"
       ls -al 
-      echo $(params.message) | ./jq
+      echo $(params.message) > body 
+      cat body 
+      cat body | ./jq
   workspaces:
   - description: The git repo will be cloned onto the volume backing this Workspace.
     name: output

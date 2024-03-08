@@ -20,10 +20,26 @@ spec:
       workspaces:
         - name: output
           workspace: workspace
+    - name: promote-debug 
+      params:
+        - name: message
+          value: "promote-debug "
+      runAfter:
+        - git-clone
+      taskRef:
+        name: promote
     - name: promote
       params:
         - name: message
           value: $(params.message)  
+      runAfter:
+        - git-clone
+      taskRef:
+        name: promote
+    - name: promote-after 
+      params:
+        - name: message
+          value: "promote-after "
       runAfter:
         - git-clone
       taskRef:

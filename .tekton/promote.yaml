@@ -28,6 +28,9 @@ spec:
         - git-clone
       taskRef:
         name: promote
+      workspaces:
+        - name: output
+          workspace: workspace
     - name: promote
       params:
         - name: message
@@ -36,6 +39,9 @@ spec:
         - promote-debug 
       taskRef:
         name: promote
+      workspaces:
+        - name: output
+          workspace: workspace
     - name: promote-after 
       params:
         - name: message
@@ -43,7 +49,7 @@ spec:
       runAfter:
         - promote
       taskRef:
-        name: promote
+        name: promote 
       workspaces:
         - name: output
           workspace: workspace

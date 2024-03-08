@@ -5,7 +5,7 @@ metadata:
   annotations:
     pipelinesascode.tekton.dev/on-event: "[push]"
     pipelinesascode.tekton.dev/on-target-branch: "[promote-to-stage, promote-to-prod]" 
-    pipelinesascode.tekton.dev/pipeline: "https://raw.githubusercontent.com/jduimovich/acs-test/hacks/.tekton/promote.yaml" 
+    pipelinesascode.tekton.dev/pipeline: ".tekton/promote.yaml" 
     pipelinesascode.tekton.dev/task-0: "https://raw.githubusercontent.com/redhat-appstudio/tssc-sample-pipelines/main/pac/tasks/git-clone.yaml"
   labels:
     argocd/app-name: acs-test
